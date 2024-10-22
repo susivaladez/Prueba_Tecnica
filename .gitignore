@@ -1,2 +1,6 @@
 .idea/
 .gradle/
+build/tmp/compileJava/compileTransaction/stash-dir/SecuenciasController.class.uniqueId0
+/gradle
+*.bat
+gradlew
