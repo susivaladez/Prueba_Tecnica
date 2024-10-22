@@ -1,6 +1,7 @@
 package com.example.secuencias.secuencias.controller;
 
 
+import com.example.secuencias.secuencias.Model.EntradaBean;
 import com.example.secuencias.secuencias.services.SecuenciasService;
 import com.google.gson.Gson;
 import org.apache.coyote.BadRequestException;
@@ -47,6 +48,29 @@ public class SecuenciasController {
     }
 
 
+
+    @PostMapping("/secuence/collatz")
+    public Object getCollatz2(@RequestBody EntradaBean num) throws BadRequestException {
+
+        if(num.getNumero() <= 0){
+
+            throw new BadRequestException(HttpStatus.BAD_REQUEST.toString());
+        }
+        Gson gson = new Gson();
+        String sec = gson.toJson(secuenciasService.collatz(num.getNumero()));
+        return sec;
+    }
+
+
+    @PostMapping("/fizzbuzz")
+    public Object getFizzBuzz2(@RequestBody EntradaBean num) throws BadRequestException {
+        if(num.getNumero() <= 0){
+            throw new BadRequestException(HttpStatus.BAD_REQUEST.toString());
+        }
+        Gson gson = new Gson();
+        String sec2 = gson.toJson(secuenciasService.fizz(num.getNumero()));
+        return sec2;
+    }
 
 
 

@@ -4,3 +4,4 @@ build/tmp/compileJava/compileTransaction/stash-dir/SecuenciasController.class.un
 /gradle
 *.bat
 gradlew
+/build
